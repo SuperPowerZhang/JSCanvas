@@ -13,6 +13,7 @@ function draw() {
         //lineCap修复线条的层次不齐的感觉
         ctx.lineCap = "round";
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            ctx.lineWidth = 5;
             canvas.ontouchstart = (e) => {
                 if (!flag) {
                     flag = true;
@@ -22,6 +23,7 @@ function draw() {
                 }
             }
             canvas.ontouchmove = (e) => {
+                e.preventDefault();//防止滑动屏幕时屏幕被上下拖走，一晃一晃的感觉
                 if (flag) {
                     ctx.beginPath();
                     ctx.moveTo(m.x, m.y);
