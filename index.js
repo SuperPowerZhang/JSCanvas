@@ -13,7 +13,6 @@ function draw() {
         //lineCap修复线条的层次不齐的感觉
         ctx.lineCap = "round";
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            console.log("是手机呀");
             canvas.ontouchstart = (e) => {
                 if (!flag) {
                     flag = true;
