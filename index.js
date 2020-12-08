@@ -17,7 +17,6 @@ function draw() {
             canvas.ontouchstart = (e) => {
                 if (!flag) {
                     flag = true;
-                    console.log(e.touches[0].clientX, e.touches[0].clientY);
                     m.x = e.touches[0].clientX;
                     m.y = e.touches[0].clientY;
                 }
